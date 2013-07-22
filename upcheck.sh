@@ -15,6 +15,7 @@ then
 	if [ "${pingCheckMsg}" != "Host unreachable\n" ]
 	then
 		# Then make alert and store alert in upcheck-${1}-.msg
+		echo "`date`" >> ~/uptime.log
 		echo "$1" >> ~/uptime.log
 		echo "${pingCheck}" >> ~/uptime.log
 		echo "${pingCheckMsg}" >> ~/uptime.log
@@ -29,6 +30,7 @@ else
 	if [ "${pingCheckMsg}" != "Host reachable\n" ]
 	then
 		# Then make alert and store alert in upcheck-${1}-.msg
+		echo "`date`" >> ~/uptime.log
 		echo "$1" >> ~/uptime.log
 		echo "${pingCheck}" >> ~/uptime.log
 		echo "${pingCheckMsg}" >> ~/uptime.log
