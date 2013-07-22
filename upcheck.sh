@@ -16,7 +16,8 @@ then
 	then
 		# Then make alert and store alert in upcheck-${1}-.msg
 		echo "Host unreachable" > ~/upcheck-${1}-.msg
-		echo "Host $1 unreachable"
+		echo "Host $1 unreachable" >> ~/uptime.log
+		echo "`pwd`" >> ~/uptime.log
 		mail -s "[PROBLEM] Host $1 ping returned < 10%" $2 < /dev/null
 	fi
 else
@@ -27,7 +28,8 @@ else
 	then
 		# Then make alert and store alert in upcheck-${1}-.msg
 		echo "Host reachable" > ~/upcheck-${1}-.msg
-		echo "Host $1 reachable"
+		echo "Host $1 reachable" >> ~/uptime.log
+		echo "`pwd`" >> ~/uptime.log
 		mail -s "[SOLVED] Host $1 ping returned > 10%" $2 < /dev/null
 	fi
 fi
