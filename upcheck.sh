@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# This script will check on specified intervals if the returned pings are sufficient and if not mail
+#
 
 pingCheck=`ping -c 20 $1 | grep $1: | wc -l`
 
