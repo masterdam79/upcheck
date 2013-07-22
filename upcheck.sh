@@ -16,6 +16,7 @@ then
 	then
 		# Then make alert and store alert in upcheck-${1}-.msg
 		echo "$1" >> ~/uptime.log
+		echo "${pingCheck}" >> ~/uptime.log
 		echo "${pingCheckMsg}" >> ~/uptime.log
 #		echo "`pwd`" >> ~/uptime.log
 		echo "Host unreachable" > ~/upcheck-${1}-.msg
@@ -29,6 +30,7 @@ else
 	then
 		# Then make alert and store alert in upcheck-${1}-.msg
 		echo "$1" >> ~/uptime.log
+		echo "${pingCheck}" >> ~/uptime.log
 		echo "${pingCheckMsg}" >> ~/uptime.log
 #		echo "`pwd`" >> ~/uptime.log
 		echo "Host reachable" > ~/upcheck-${1}-.msg
